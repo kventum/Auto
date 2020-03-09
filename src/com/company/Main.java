@@ -3,41 +3,49 @@ package com.company;
 public class Main {
 
     public static void main(String[] args) {
-        VwPolo Polo = new VwPolo();
+        Sedan.VwPolo Polo = new Sedan.VwPolo();
         Polo.seats();
-        Polo.accelerate(4,10);
+        Polo.accelerate(4.2f,10);
+        Polo.consumption(110);
 
-        ToyotaCorolla Corolla = new ToyotaCorolla();
+        Sedan.ToyotaCorolla Corolla = new Sedan.ToyotaCorolla();
         Corolla.seats();
-        Corolla.accelerate(5.5f, 10);
+        Corolla.accelerate(5.2f, 10);
+        Corolla.consumption(122);
 
-        SkodaRapid Rapid = new SkodaRapid();
+        Sedan.SkodaRapid Rapid = new Sedan.SkodaRapid();
         Rapid.seats();
-        Rapid.accelerate(4.85f, 10);
+        Rapid.accelerate(4.45f, 10);
+        Rapid.consumption(90);
 
-        MercedesSprinter Sprinter = new MercedesSprinter();
+        Van.MercedesSprinter Sprinter = new Van.MercedesSprinter();
         Sprinter.seats();
         Sprinter.accelerate(3.5f, 10);
+        Sprinter.consumption(136);
 
-        RenaultKangoo Kangoo = new RenaultKangoo();
+        Van.RenaultKangoo Kangoo = new Van.RenaultKangoo();
         Kangoo.seats();
-        Kangoo.accelerate(3, 10);
+        Kangoo.accelerate(3.3f, 10);
+        Kangoo.consumption(102);
 
-        Gazelle Gazelle = new Gazelle();
+        Van.Gazelle Gazelle = new Van.Gazelle();
         Gazelle.seats();
-        Gazelle.accelerate(2.75f, 10);
+        Gazelle.accelerate(2.85f, 10);
+        Gazelle.consumption(120);
 
-        Porshe911 Porshe911 = new Porshe911();
+        Coupe.Porshe911 Porshe911 = new Coupe.Porshe911();
         Porshe911.seats();
         Porshe911.accelerate(7.7f, 10);
+        Porshe911.consumption(450);
 
-        FordMustang Mustang = new FordMustang();
+        Coupe.FordMustang Mustang = new Coupe.FordMustang();
         Mustang.seats();
-        Mustang.accelerate(7, 10);
+        Mustang.accelerate(6.6f, 10);
+        Mustang.consumption(317);
 
-        LamborghiniGallardo Gallargo = new LamborghiniGallardo();
-        Gallargo.seats();
-        Gallargo.accelerate(7.9f, 10);
+        Coupe.LamborghiniGallardo Gallardo = new Coupe.LamborghiniGallardo();
+        Gallardo.seats();
+        Gallardo.accelerate(7.9f, 10);
+        Gallardo.consumption(560);
     }
 }
-

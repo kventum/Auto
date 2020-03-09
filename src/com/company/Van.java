@@ -1,45 +1,73 @@
 package com.company;
 
-public abstract class Van implements Auto{
+public abstract class Van implements Auto {
     @Override
-    public int seats(){
+    public int seats() {
         return 0;
     }
-    public void accelerate(float a, int t){
-    }
-}
-class MercedesSprinter extends Van{
-    @Override
-    public void accelerate(float a, int t) {
-        System.out.println ("Mercedes Sprinter за 10 секунд ускоряется на " + a*t + " км/ч");
+
+    public float accelerate(float a, int t) {
+        return (a*t);
     }
 
-    @Override
-    public int seats() {
-        return 19;
+    static class MercedesSprinter extends Van {
+        public float power;
+        @Override
+        public float accelerate(float a, int t) {
+            System.out.println("Mercedes Sprinter за 10 секунд ускоряется на " + super.accelerate(a, t) + " км/ч");
+            return a;
+        }
+        public float consumption(float power) {
+            this.power = power;
+            System.out.println("Mercedes Sprinter расходует " + (power/9) + " л топлива");
+            System.out.println();
+            return power;
+        }
+
+        @Override
+        public int seats() {
+            return 19;
+        }
     }
-}
 
-class RenaultKangoo extends Van{
-    @Override
-    public void accelerate(float a, int t){
-        System.out.println ("Renault Kangoo за 10 секунд ускоряется на " + a*t + " км/ч");
-    };
+    static class RenaultKangoo extends Van {
+        public float power;
+        @Override
+        public float accelerate(float a, int t) {
+            System.out.println("Renault Kangoo за 10 секунд ускоряется на " + super.accelerate(a, t) + " км/ч");
+            return a;
+        }
+        public float consumption(float power) {
+            this.power = power;
+            System.out.println("Renault Kangoo расходует " + (power/10) + " л топлива");
+            System.out.println();
+            return power;
+        }
 
-    @Override
-    public int seats() {
-        return 7;
+        @Override
+        public int seats() {
+            return 7;
+        }
     }
-}
 
-class Gazelle extends Van{
-    @Override
-    public void accelerate(float a, int t){
-        System.out.println ("Gazelle за 10 секунд ускоряется на " + a*t + " км/ч");
-    };
+    static class Gazelle extends Van {
+        public float power;
+        @Override
+        public float accelerate(float a, int t) {
+            System.out.println("Gazelle за 10 секунд ускоряется на " + super.accelerate(a, t) + " км/ч");
+            return a;
+        }
+        public float consumption(float power) {
+            this.power = power;
+            System.out.println("Gazelle расходует " + (power/8) + " л топлива");
+            System.out.println();
+            return power;
+        }
 
-    @Override
-    public int seats() {
-        return 15;
+
+        @Override
+        public int seats() {
+            return 15;
+        }
     }
 }

@@ -1,31 +1,58 @@
 package com.company;
 
-public abstract class Sedan implements Auto{
+public abstract class Sedan implements Auto {
     @Override
-    public int seats(){
+    public int seats() {
         return 5;
     }
-    public void accelerate(float a, int t){
+
+    public float accelerate(float a, int t) {
+        return (a * t);
     }
-}
 
-class VwPolo extends Sedan{
-    @Override
-    public void accelerate(float a, int t) {
-        System.out.println ("Volkswagen Polo за 10 секунд ускоряется на " + a*t + " км/ч");
+    static class VwPolo extends Sedan {
+        public float power;
+        @Override
+        public float consumption(float power) {
+            this.power = power;
+            System.out.println("Volkswagen Polo расходует " + (power/13) + " л топлива");
+            System.out.println();
+            return power;
+        }
+
+        public float accelerate(float a, int t) {
+            System.out.println("Volkswagen Polo за 10 секунд ускоряется на " + super.accelerate(a, t) + " км/ч");
+            return a;
+        }
     }
-}
 
-class ToyotaCorolla extends Sedan{
-    @Override
-    public void accelerate(float a, int t){
-        System.out.println ("Toyota Corolla за 10 секунд ускоряется на " + a*t + " км/ч");
-    };
-}
+    static class ToyotaCorolla extends Sedan {
+        float power;
+        @Override
+        public float consumption(float power) {
+            this.power = power;
+            System.out.println("Toyota Corolla расходует " + (power/12) + " л топлива");
+            System.out.println();
+            return power;
+        }
+        public float accelerate(float a, int t) {
+            System.out.println("Toyota Corolla за 10 секунд ускоряется на " + super.accelerate(a, t) + " км/ч /n");
+            return a;
+        }
+    }
 
-class SkodaRapid extends Sedan{
-    @Override
-    public void accelerate(float a, int t){
-        System.out.println ("Skoda Rapid за 10 секунд ускоряется на " + a*t + " км/ч");
-    };
+    static class SkodaRapid extends Sedan {
+        float power;
+        @Override
+        public float consumption(float power) {
+            this.power = power;
+            System.out.println("Skoda Rapid расходует " + (power/12) + " л топлива");
+            System.out.println();
+            return power;
+        }
+        public float accelerate(float a, int t) {
+            System.out.println("Skoda Rapid за 10 секунд ускоряется на " + super.accelerate(a, t) + " км/ч");
+            return a;
+        }
+    }
 }
